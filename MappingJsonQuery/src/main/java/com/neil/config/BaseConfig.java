@@ -1,9 +1,9 @@
 package com.neil.config;
 
 import com.neil.datasource.DataSourceProperties;
+import com.neil.query.core.NoEntityTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BaseConfig {
 
     @Bean
-    public Map<DataSourceProperties, JdbcTemplate> jdbcTemplateMap() {
+    public Map<DataSourceProperties, NoEntityTemplate> jdbcTemplateMap() {
         return new ConcurrentHashMap<>();
     }
 }
